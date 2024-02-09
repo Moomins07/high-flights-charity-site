@@ -1,0 +1,68 @@
+@import 'fonts'; // Adjust the path as necessary
+
+// Font
+$font-family-sans-serif: 'Mylius Modern', 'Open Sans', sans-serif;
+$font-weight-normal: 300; // Light
+$font-weight-bold: 700; // Bold
+
+// Colors
+$primary: #ffffff;
+$secondary: #021b41;
+$dark: #021b41;
+$light: #a6c3e0;
+// $body-color: #232323;
+$headings-color: $primary;
+
+// HRs
+$hr-opacity: 1;
+
+// Navbar
+$navbar-nav-link-padding-x: 0.8rem;
+$navbar-padding-y: 1rem;
+$nav-link-font-size: 16px;
+$nav-link-color: #fff;
+
+// Spacing
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 6,
+  7: $spacer * 8,
+  8: $spacer * 12,
+) !default;
+
+$headings-margin-bottom: $spacer * 1 !default;
+$headings-font-weight: bold;
+
+// Buttons
+$button-radius: 0px;
+$button-padding-x: 20px;
+$button-padding-y: 20px;
+
+$btn-border-radius: $button-radius;
+$btn-border-radius-sm: $button-radius;
+$btn-border-radius-lg: $button-radius;
+$btn-padding-y: $button-padding-y;
+$btn-padding-y-lg: $button-padding-y;
+$btn-padding-y-sm: $button-padding-y;
+$btn-padding-x: $button-padding-x;
+$btn-padding-x-lg: $button-padding-x;
+$btn-padding-x-sm: $button-padding-x;
+$navbar-toggler-border-radius: 5px;
+
+// Inputs
+$input-radius: 30px;
+$input-btn-padding-y: 0.7rem;
+$input-btn-padding-x: 1rem;
+$input-border-radius: $input-radius;
+$input-border-radius-sm: $input-radius;
+$input-border-radius-lg: $input-radius;
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';

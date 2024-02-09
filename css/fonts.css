@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Mylius Modern";
+  src: url("../webfonts/MyliusModern-ExtraLight.eot");
+  src: local("Mylius Modern Extralight"), local("MyliusModern-ExtraLight"), url("../webfonts/MyliusModern-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../webfonts/MyliusModern-ExtraLight.woff2") format("woff2"), url("../webfonts/MyliusModern-ExtraLight.woff") format("woff"), url("../webfonts/MyliusModern-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mylius Modern";
+  src: url("../webfonts/MyliusModern-Light.eot");
+  src: local("Mylius Modern Light"), local("MyliusModern-Light"), url("../webfonts/MyliusModern-Light.eot?#iefix") format("embedded-opentype"), url("../webfonts/MyliusModern-Light.woff2") format("woff2"), url("../webfonts/MyliusModern-Light.woff") format("woff"), url("../webfonts/MyliusModern-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mylius Modern";
+  src: url("../webfonts/MyliusModern-Bold.eot");
+  src: local("Mylius Modern Bold"), local("MyliusModern-Bold"), url("../webfonts/MyliusModern-Bold.eot?#iefix") format("embedded-opentype"), url("../webfonts/MyliusModern-Bold.woff2") format("woff2"), url("../webfonts/MyliusModern-Bold.woff") format("woff"), url("../webfonts/MyliusModern-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mylius Modern";
+  src: url("../webfonts/MyliusModern-Regular.eot");
+  src: local("Mylius Modern"), local("MyliusModern-Regular"), url("../webfonts/MyliusModern-Regular.eot?#iefix") format("embedded-opentype"), url("../webfonts/MyliusModern-Regular.woff2") format("woff2"), url("../webfonts/MyliusModern-Regular.woff") format("woff"), url("../webfonts/MyliusModern-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
