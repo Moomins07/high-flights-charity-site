@@ -12,19 +12,41 @@
 //   menu.classList.toggle('hidden');
 // }
 
-function mainApp() {
-  // NAVBAR HANDLE ACTIVE LINK
-  document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
-    link.addEventListener('click', function () {
-      // Remove active class from all nav links
-      document.querySelectorAll('.navbar-nav .nav-link').forEach((navLink) => {
-        navLink.classList.remove('active');
+(() => {
+  function handleNavBarLinks() {
+    document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
+      link.addEventListener('click', function () {
+        // Remove active class from all nav links
+        document
+          .querySelectorAll('.navbar-nav .nav-link')
+          .forEach((navLink) => {
+            navLink.classList.remove('active');
+          });
+
+        // Add active class to the clicked nav link
+        this.classList.add('active');
       });
-
-      // Add active class to the clicked nav link
-      this.classList.add('active');
     });
-  });
-}
+  }
 
-document.addEventListener('DOMContentLoaded', mainApp);
+  function handleAnimations() {
+    const introLogo = document.getElementById('intro-logo');
+    const path = window.location.pathname;
+
+    if (path === 'index.html' || '/') {
+      setTimeout(() => {
+        introLogo.classList.add('animate__fadeIn');
+      }, 0);
+      setTimeout(() => {
+        introLogo.classList.add('animate__fadeOutShrinkMove');
+      }, 1500);
+    }
+  }
+
+  function mainApp() {
+    handleNavBarLinks();
+    handleAnimations();
+  }
+
+  document.addEventListener('DOMContentLoaded', mainApp);
+})();

@@ -10,7 +10,7 @@
   background-color: rgb(255, 255, 255); /* white overlay */
   z-index: 5;
   animation: fadeOut 1s ease-in;
-  animation-delay: 3s;
+  animation-delay: 4s;
   animation-fill-mode: backwards;
   pointer-events: none;
 }
@@ -24,8 +24,6 @@
   height: auto; /* Maintain aspect ratio */
   z-index: 7;
   opacity: 0;
-  animation: fadeInShrinkMove 3s ease forwards;
-  animation-delay: 0.5s;
   animation-fill-mode: backwards;
 }
 
@@ -86,14 +84,14 @@
   border: 2px solid #ffffff !important;
   max-width: 870px !important;
   animation: moveInBottom 1s ease-out;
-  animation-delay: 3.5s;
+  animation-delay: 4.5s;
   animation-fill-mode: backwards;
 }
 .header .header-main hr:nth-child(3) {
   border: 2px solid #ffffff !important;
   max-width: 718px !important;
   animation: moveInBottom 1s ease-out;
-  animation-delay: 3.6s;
+  animation-delay: 4.6s;
   animation-fill-mode: backwards;
 }
 .header .header-main span:first-child {
@@ -112,8 +110,16 @@
   text-align: center;
   height: 205px !important;
   animation: moveInBottom 1.5s ease-out;
-  animation-delay: 3.7s;
+  animation-delay: 4.7s;
   animation-fill-mode: backwards;
+}
+
+.animate__fadeIn {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.animate__fadeOutShrinkMove {
+  animation: fadeOutShrinkMove 3s ease-in-out;
 }
 
 @keyframes moveInBottom {
@@ -134,14 +140,20 @@
     opacity: 0;
   }
 }
-@keyframes fadeInShrinkMove {
+@keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: scale(1) translate(-50%, -50%); /* Centered starting position */
+    transform: scale(1) translate(-50%, -50%);
   }
-  20% {
+  100% {
     opacity: 1;
-    transform: scale(1) translate(-50%, -50%); /* Ensure it stays centered as it fades in */
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+@keyframes fadeOutShrinkMove {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%); /* Centered starting position */
   }
   100% {
     opacity: 0;
