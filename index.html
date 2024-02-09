@@ -81,6 +81,33 @@
       </header>
     </div>
 
+    <div class="action-panel bg-dark">
+      <div class="container">
+        <div class="row align-items-center justify-content-around">
+          <!-- Use col-md-* classes to adjust for medium and larger screens, and col-12 to make it full width on smaller screens -->
+          <div class="col-12 col-md-auto d-flex justify-content-around bg-dark">
+            <ul
+              class="d-none d-sm-flex list-unstyledalign-items-center gap-3 m-0"
+            >
+              <li><a href="#link1" class="btn btn-link">Panel Link 1</a></li>
+              <li><a href="#link2" class="btn btn-link">Panel Link 2</a></li>
+              <li><a href="#link3" class="btn btn-link">Panel Link 3</a></li>
+            </ul>
+          </div>
+          <!-- This will make the button take the full width of its column on small screens, and align next to the list on md and larger screens -->
+          <div class="col-12 col-md-auto text-center">
+            <button
+              id="contact-us"
+              class="btn btn-outline-primary text-uppercase"
+              onclick="location.href='contact.html'"
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>

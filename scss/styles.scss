@@ -52,6 +52,11 @@ $secondary: #021b41;
 $dark: #021b41;
 $light: #a6c3e0;
 
+// Global styling
+a {
+  text-decoration: none !important;
+}
+
 // Logo opening animation
 .masthead::before {
   content: '';
@@ -191,6 +196,23 @@ $light: #a6c3e0;
     animation-delay: 4.7s;
     animation-fill-mode: backwards;
   }
+}
+
+// DIVIDER ONE
+.action-panel {
+  padding: 16px !important;
+}
+
+.panel-links li {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+#contact-us {
+  padding: 20px !important;
 }
 
 // ANIMATIONS

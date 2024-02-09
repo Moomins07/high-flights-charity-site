@@ -1,4 +1,8 @@
 /* Hamburger Menu */
+a {
+  text-decoration: none !important;
+}
+
 .masthead::before {
   content: "";
   position: absolute;
@@ -112,6 +116,22 @@
   animation: moveInBottom 1.5s ease-out;
   animation-delay: 4.7s;
   animation-fill-mode: backwards;
+}
+
+.action-panel {
+  padding: 16px !important;
+}
+
+.panel-links li {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+#contact-us {
+  padding: 20px !important;
 }
 
 .animate__fadeIn {

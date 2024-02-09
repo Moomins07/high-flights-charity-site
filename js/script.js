@@ -12,6 +12,7 @@
 //   menu.classList.toggle('hidden');
 // }
 
+// IIFE to keep everything nice and neat outside of the global scope :)
 (() => {
   function handleNavBarLinks() {
     document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
@@ -48,5 +49,6 @@
     handleAnimations();
   }
 
+  // ADD EVENT LISTENERS HERE!
   document.addEventListener('DOMContentLoaded', mainApp);
 })();
