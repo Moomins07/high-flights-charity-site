@@ -3,6 +3,10 @@ a {
   text-decoration: none !important;
 }
 
+body {
+  background: linear-gradient(180deg, #a6c3e0 0%, #2e5c99 49.48%, #021b41 100%);
+}
+
 .masthead::before {
   content: "";
   position: absolute;
@@ -134,6 +138,80 @@ a {
   padding: 20px !important;
 }
 
+#panel1-section {
+  padding-top: 0 !important;
+}
+
+.panel-section h2 {
+  font-size: 48px !important;
+}
+.panel-section p {
+  font-size: 26px !important;
+  font-weight: 200;
+  line-height: 33px;
+  letter-spacing: 0em;
+}
+
+.card-container {
+  position: relative !important;
+}
+
+.card-container::after {
+  content: "";
+  position: absolute;
+  width: 470px; /* Outer diameter of the circle */
+  height: 470px; /* Outer diameter of the circle */
+  bottom: -40%; /* Adjust this value to control the visible segment */
+  right: -30%; /* Adjust this value to control the visible segment */
+  border: 10px solid #ce210f; /* Adjust border width and color as needed */
+  border-radius: 50%; /* Creates the circle shape */
+  box-sizing: border-box;
+  background: none; /* Ensures the center of the circle is transparent */
+  transform: rotate(0deg); /* Adjust the angle if needed */
+  z-index: -1; /* Ensures it sits below the cards */
+  clip-path: ellipse(50% 50% at 100% 0%);
+}
+
+.card-step-1 {
+  transform: translateY(-2rem);
+}
+
+.card-step-2 {
+  transform: translateY(10rem);
+}
+
+.card-step-3 {
+  transform: translateY(22rem);
+}
+
+.adjusted-container {
+  margin-bottom: 20rem !important;
+}
+
+.card {
+  border: 0 !important;
+}
+.card .card-img-top {
+  height: 260px !important;
+  background-position: center !important;
+  object-fit: cover;
+}
+.card h5 {
+  font-size: 16px !important;
+}
+.card p {
+  font-size: 12px !important;
+}
+
+.card {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.card.show {
+  opacity: 1;
+}
+
 .animate__fadeIn {
   animation: fadeIn 1.5s ease-in-out;
 }
@@ -189,5 +267,28 @@ a {
   }
   .header .roles {
     font-size: 18px !important;
+  }
+  .panel-section h2 {
+    font-size: 32px !important;
+  }
+  .panel-section p {
+    font-size: 20px !important;
+    font-weight: 200;
+    line-height: 33px !important;
+    letter-spacing: 0em;
+  }
+  .card-step-1 {
+    margin-top: 50px !important;
+  }
+  .adjusted-container {
+    margin-bottom: 1rem !important;
+  }
+  .card-step-1,
+  .card-step-2,
+  .card-step-3 {
+    transform: none !important;
+  }
+  .card {
+    width: auto !important;
   }
 }

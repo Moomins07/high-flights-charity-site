@@ -14,6 +14,31 @@
 
 // IIFE to keep everything nice and neat outside of the global scope :)
 (() => {
+  function handleCardAnimations() {
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            // Calculate delay based on card's position in the NodeList
+            const delay = index * 200; // 200ms delay per card
+            setTimeout(() => {
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target); // Stop observing the card once it's shown
+            }, delay);
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Adjust as needed
+      }
+    );
+
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+      observer.observe(card);
+    });
+  }
+
   function handleNavBarLinks() {
     document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
       link.addEventListener('click', function () {
@@ -47,6 +72,7 @@
   function mainApp() {
     handleNavBarLinks();
     handleAnimations();
+    handleCardAnimations();
   }
 
   // ADD EVENT LISTENERS HERE!
