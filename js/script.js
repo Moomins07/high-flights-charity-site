@@ -14,18 +14,16 @@
 
 // IIFE to keep everything nice and neat outside of the global scope :)
 (() => {
-  function handleCardAnimations() {
+  /* Refactored to accept multiple elements to apply 'show' animation. May eventually make class name dynamic also.*/
+  function handleScrollAnimations(...selector) {
+    console.log(...selector);
     const observer = new IntersectionObserver(
       (entries, observer) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             // Calculate delay based on card's position in the NodeList
-            const delay = index * 200; // 200ms delay per card
-            setTimeout(() => {
-              entry.target.classList.add('show');
-
-              observer.unobserve(entry.target); // Stop observing the card once it's shown
-            }, delay);
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target); // Stop observing the card once it's shown
           }
         });
       },
@@ -34,9 +32,9 @@
       }
     );
 
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-      observer.observe(card);
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((element) => {
+      observer.observe(element);
     });
   }
 
@@ -56,7 +54,7 @@
     });
   }
 
-  function handleAnimations() {
+  function handleLandingPageAnimations() {
     const introLogo = document.getElementById('intro-logo');
     const path = window.location.pathname;
 
@@ -72,8 +70,8 @@
 
   function mainApp() {
     handleNavBarLinks();
-    handleAnimations();
-    handleCardAnimations();
+    handleLandingPageAnimations();
+    handleScrollAnimations('.card');
   }
 
   // ADD EVENT LISTENERS HERE!
