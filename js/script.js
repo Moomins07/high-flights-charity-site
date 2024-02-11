@@ -23,13 +23,14 @@
             const delay = index * 200; // 200ms delay per card
             setTimeout(() => {
               entry.target.classList.add('show');
+
               observer.unobserve(entry.target); // Stop observing the card once it's shown
             }, delay);
           }
         });
       },
       {
-        threshold: 0.1, // Adjust as needed
+        threshold: 0.75, // Adjust as needed
       }
     );
 
