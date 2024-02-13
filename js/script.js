@@ -5,10 +5,12 @@
   // Toggle Mobile Menu
   function navToggle() {
     const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
 
     setTimeout(() => {
       btn.classList.toggle('disabled');
     }, 500);
+    // btn.classList
     btn.classList.toggle('disabled');
     btn.classList.toggle('open');
   }

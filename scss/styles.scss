@@ -82,7 +82,7 @@ body {
   opacity: 0;
   background-color: rgb(255, 255, 255); /* white overlay */
   z-index: 5;
-  // animation: fadeOut 1s ease-in;
+  animation: fadeOut 1s ease-in;
   animation-delay: 4s;
   animation-fill-mode: backwards;
   pointer-events: none;
@@ -513,5 +513,11 @@ body {
 
   .card {
     width: auto !important;
+  }
+}
+
+@media (min-width: 990px) {
+  #menu-btn {
+    display: none !important;
   }
 }
