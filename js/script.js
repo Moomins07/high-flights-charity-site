@@ -1,19 +1,18 @@
-// HAMBURGER MENU
-
-// const btn = document.getElementById('menu-btn');
-// const menu = document.getElementById('menu');
-
-// btn.addEventListener('click', navToggle);
-
-// // Toggle Mobile Menu
-// function navToggle() {
-//   btn.classList.toggle('open');
-//   menu.classList.toggle('flex');
-//   menu.classList.toggle('hidden');
-// }
-
 // IIFE to keep everything nice and neat outside of the global scope :)
 (() => {
+  // HAMBURGER MENU
+
+  // Toggle Mobile Menu
+  function navToggle() {
+    const btn = document.getElementById('menu-btn');
+
+    setTimeout(() => {
+      btn.classList.toggle('disabled');
+    }, 500);
+    btn.classList.toggle('disabled');
+    btn.classList.toggle('open');
+  }
+
   /* Refactored to apply animations to multiple elements. I went deep down this rabbit hole. */
 
   function handleScrollAnimations(...args) {
@@ -114,6 +113,7 @@
     }
   }
   // ADD EVENT LISTENERS HERE!
+  document.getElementById('menu-btn').addEventListener('click', navToggle);
   window.addEventListener('resize', checkForWindowChange);
   document.addEventListener('DOMContentLoaded', mainApp);
 })();
