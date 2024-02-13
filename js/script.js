@@ -16,29 +16,19 @@
 (() => {
   /* Refactored to apply animations to multiple elements. I went deep down this rabbit hole. */
 
-  function handleScrollAnimations(className, ...args) {
-    // Determine if the second argument is a callback function or a selector
-    let onIntersectCallback = null;
-    let selectors;
+  function handleScrollAnimations(...args) {
+    console.log(args);
+    let className = typeof args[0] === 'string' ? args.shift() : undefined;
+    console.log(className);
+    let onIntersectCallback =
+      typeof args[0] === 'function' ? args.shift() : undefined;
+    let selectors = args; // Remaining arguments are treated as selectors
 
-    // When passing null into function, it was adding 'null' as a class.
-    // if (className === null) {
-    //   className = '';
-    // }
-
-    if (typeof args[0] === 'function') {
-      onIntersectCallback = args[0];
-      selectors = args.slice(1);
-    } else {
-      selectors = args;
-    }
     const observer = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add(className);
-
-            BUG; // NEED TO REMOVE 'null' FROM CLASS LIST
+            // Only add the class if className is a non-empty string
             if (className) {
               entry.target.classList.add(className);
             }
@@ -46,18 +36,17 @@
             if (onIntersectCallback) {
               onIntersectCallback(entry.target, observer);
             }
-            observer.unobserve(entry.target); // Stop observing the card once it's shown
+
+            // Optionally, stop observing the target if no longer needed
+            observer.unobserve(entry.target);
           }
         });
       },
-      {
-        threshold: 0.5, // Adjust as needed
-      }
+      { threshold: 0.5 }
     );
 
     selectors.forEach((selector) => {
-      const elements = document.querySelectorAll(selector);
-      elements.forEach((element) => {
+      document.querySelectorAll(selector).forEach((element) => {
         observer.observe(element);
       });
     });
@@ -98,10 +87,10 @@
     handleNavBarLinks();
     handleLandingPageAnimations();
     handleScrollAnimations('show', '.card');
-    /* Honestly I'm not sure I even know what's going on here anymore but it works. Using IntersectionObserverAPI and a callback function in my handleScrollAnimations function to check for the last-card being observed, to use the callback to then call handleScrollAnimations to apply the animations .5s after eachother using setTimeout...?   */
-    handleScrollAnimations(
-      null,
-      (target, observer) => {
+    /* Honestly I'm not sure I even know what's going on here anymore but it works. Using IntersectionObserverAPI and a callback function in my handleScrollAnimations function to check for the last-card being observed, to use the callback to then call handleScrollAnimations to apply the animations .5s after eachother using setTimeout...? */
+    handleScrollAnimations((target, observer) => {
+      const cardOne = document.querySelector('.card-step-1');
+      if (window.innerWidth > 1350) {
         if (target.classList.contains('last-card')) {
           setTimeout(() => {
             handleScrollAnimations(
@@ -111,16 +100,16 @@
           }, 500);
           setTimeout(() => {
             handleScrollAnimations(
-              'animate__rotateClockwise90',
+              'animate__rotateCounterClockwise90',
               '.card-step-2'
             );
           }, 1000);
         }
-      },
-      '.card-container'
-    );
-
-    // ADD EVENT LISTENERS HERE!
+      } else {
+        cardOne.style.opacity = 1;
+      }
+    }, '.card-container');
   }
+  // ADD EVENT LISTENERS HERE!
   document.addEventListener('DOMContentLoaded', mainApp);
 })();

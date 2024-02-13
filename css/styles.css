@@ -3,6 +3,10 @@ a {
   text-decoration: none !important;
 }
 
+html {
+  overflow-x: hidden !important;
+}
+
 body {
   background: linear-gradient(180deg, #a6c3e0 0%, #2e5c99 49.48%, #021b41 100%);
   overflow-x: hidden !important;
@@ -160,21 +164,6 @@ body {
 .card-step-1 {
   transform: translateY(-2rem);
 }
-.card-step-1::before {
-  content: "";
-  opacity: 0;
-  position: absolute;
-  width: 470px; /* Outer diameter of the circle */
-  height: 470px; /* Outer diameter of the circle */
-  bottom: -40%; /* Adjust this value to control the visible segment */
-  right: -30%; /* Adjust this value to control the visible segment */
-  border: 10px solid #ce210f; /* Adjust border width and color as needed */
-  border-radius: 50%; /* Creates the circle shape */
-  background: none; /* Ensures the center of the circle is transparent */
-  transform: rotate(-90deg); /* Adjust the angle if needed */
-  z-index: 0; /* Ensures it sits below the cards */
-  clip-path: ellipse(50% 50% at 100% 0%);
-}
 .card-step-1::after {
   content: "";
   opacity: 0;
@@ -183,7 +172,7 @@ body {
   height: 470px; /* Outer diameter of the circle */
   bottom: -40%; /* Adjust this value to control the visible segment */
   right: -30%; /* Adjust this value to control the visible segment */
-  border: 10px solid rgba(206, 34, 15, 0.337254902); /* Adjust border width and color as needed */
+  border: 10px solid #ce220f; /* Adjust border width and color as needed */
   border-radius: 50%; /* Creates the circle shape */
   background: none; /* Ensures the center of the circle is transparent */
   transform: rotate(0deg); /* Adjust the angle if needed */
@@ -194,21 +183,6 @@ body {
 .card-step-2 {
   transform: translateY(10rem);
 }
-.card-step-2::before {
-  content: "";
-  opacity: 0;
-  position: absolute;
-  width: 470px; /* Outer diameter of the circle */
-  height: 470px; /* Outer diameter of the circle */
-  bottom: -40%; /* Adjust this value to control the visible segment */
-  right: -30%; /* Adjust this value to control the visible segment */
-  border: 10px solid #ce210f; /* Adjust border width and color as needed */
-  border-radius: 50%; /* Creates the circle shape */
-  background: none; /* Ensures the center of the circle is transparent */
-  transform: rotate(-90deg); /* Adjust the angle if needed */
-  z-index: 0; /* Ensures it sits below the cards */
-  clip-path: ellipse(50% 50% at 100% 0%);
-}
 .card-step-2::after {
   content: "";
   opacity: 0;
@@ -216,16 +190,16 @@ body {
   width: 470px; /* Outer diameter of the circle */
   height: 470px; /* Outer diameter of the circle */
   bottom: -40%; /* Adjust this value to control the visible segment */
-  right: -30%; /* Adjust this value to control the visible segment */
-  border: 10px solid rgba(206, 34, 15, 0.337254902); /* Adjust border width and color as needed */
+  right: -75%; /* Adjust this value to control the visible segment */
+  border: 10px solid #ce220f; /* Adjust border width and color as needed */
   border-radius: 50%; /* Creates the circle shape */
   background: none; /* Ensures the center of the circle is transparent */
   transform: rotate(0deg); /* Adjust the angle if needed */
   z-index: -1; /* Ensures it sits below the cards */
-  clip-path: ellipse(50% 50% at 100% 0%);
+  clip-path: ellipse(50% 50% at 0% 100%);
 }
 
-TODO .card-step-1.no-after::after,
+.card-step-1.no-after::after,
 .card-step-2.no-after::after {
   content: none; /* This effectively "removes" the pseudo-element */
 }
@@ -274,6 +248,10 @@ TODO .card-step-1.no-after::after,
   animation: rotateClockwise90 1s forwards;
 }
 
+.card-container.animate__rotateCounterClockwise90::after {
+  animation: rotateCounterClockwise90 1s forwards;
+}
+
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -292,6 +270,18 @@ TODO .card-step-1.no-after::after,
   100% {
     opacity: 1;
     transform: rotate(0deg);
+  }
+}
+@keyframes rotateCounterClockwise90 {
+  0% {
+    clip-path: ellipse(50% 20% at 0% 100%);
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+    clip-path: ellipse(50% 50% at 0% 100%);
   }
 }
 @keyframes fadeOut {
