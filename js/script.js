@@ -17,9 +17,7 @@
   /* Refactored to apply animations to multiple elements. I went deep down this rabbit hole. */
 
   function handleScrollAnimations(...args) {
-    console.log(args);
     let className = typeof args[0] === 'string' ? args.shift() : undefined;
-    console.log(className);
     let onIntersectCallback =
       typeof args[0] === 'function' ? args.shift() : undefined;
     let selectors = args; // Remaining arguments are treated as selectors
@@ -84,32 +82,38 @@
 
   function mainApp() {
     console.log('mainApp is being called');
+    checkForWindowChange();
     handleNavBarLinks();
     handleLandingPageAnimations();
     handleScrollAnimations('show', '.card');
     /* Honestly I'm not sure I even know what's going on here anymore but it works. Using IntersectionObserverAPI and a callback function in my handleScrollAnimations function to check for the last-card being observed, to use the callback to then call handleScrollAnimations to apply the animations .5s after eachother using setTimeout...? */
     handleScrollAnimations((target, observer) => {
-      const cardOne = document.querySelector('.card-step-1');
-      if (window.innerWidth > 1350) {
-        if (target.classList.contains('last-card')) {
-          setTimeout(() => {
-            handleScrollAnimations(
-              'animate__rotateClockwise90',
-              '.card-step-1'
-            );
-          }, 500);
-          setTimeout(() => {
-            handleScrollAnimations(
-              'animate__rotateCounterClockwise90',
-              '.card-step-2'
-            );
-          }, 1000);
-        }
-      } else {
-        cardOne.style.opacity = 1;
+      if (target.classList.contains('last-card')) {
+        setTimeout(() => {
+          handleScrollAnimations('animate__rotateClockwise90', '.card-step-1');
+        }, 500);
+        setTimeout(() => {
+          handleScrollAnimations(
+            'animate__rotateCounterClockwise90',
+            '.card-step-2'
+          );
+        }, 1000);
       }
     }, '.card-container');
   }
+
+  function checkForWindowChange() {
+    const cardOne = document.querySelector('.card-step-1');
+    const cardTwo = document.querySelector('.card-step-2');
+    if (window.innerWidth > 1350) {
+      cardOne.classList.remove('no-after');
+      cardTwo.classList.remove('no-after');
+    } else {
+      cardOne.classList.add('no-after');
+      cardTwo.classList.add('no-after');
+    }
+  }
   // ADD EVENT LISTENERS HERE!
+  window.addEventListener('resize', checkForWindowChange);
   document.addEventListener('DOMContentLoaded', mainApp);
 })();

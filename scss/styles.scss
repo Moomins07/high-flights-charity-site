@@ -274,7 +274,7 @@ body {
     width: 470px; /* Outer diameter of the circle */
     height: 470px; /* Outer diameter of the circle */
     bottom: -40%; /* Adjust this value to control the visible segment */
-    right: -30%; /* Adjust this value to control the visible segment */
+    right: -35%; /* Adjust this value to control the visible segment */
     border: 10px solid #ce220f; /* Adjust border width and color as needed */
     border-radius: 50%; /* Creates the circle shape */
     background: none; /* Ensures the center of the circle is transparent */
@@ -299,7 +299,7 @@ body {
   //   background: none; /* Ensures the center of the circle is transparent */
   //   transform: rotate(-90deg); /* Adjust the angle if needed */
   //   z-index: 0; /* Ensures it sits below the cards */
-  //   clip-path: ellipse(50% 50% at 100% 0%);
+  //   clip-path: ellipse(50% 50% at 0% 100%);
   // }
   &::after {
     content: '';
@@ -307,7 +307,7 @@ body {
     position: absolute;
     width: 470px; /* Outer diameter of the circle */
     height: 470px; /* Outer diameter of the circle */
-    bottom: -40%; /* Adjust this value to control the visible segment */
+    bottom: -50%; /* Adjust this value to control the visible segment */
     right: -75%; /* Adjust this value to control the visible segment */
     border: 10px solid #ce220f; /* Adjust border width and color as needed */
     border-radius: 50%; /* Creates the circle shape */
@@ -321,7 +321,7 @@ body {
 // TODO REMOVE ::AFTER ANIMATIONS ON 767px AND BELOW
 .card-step-1.no-after::after,
 .card-step-2.no-after::after {
-  content: none; /* This effectively "removes" the pseudo-element */
+  display: none; /* This effectively "removes" the pseudo-element */
 }
 
 .card-step-3 {
@@ -355,6 +355,10 @@ body {
 .card {
   opacity: 0;
   transition: opacity 1s ease-out;
+}
+
+.hide {
+  display: none;
 }
 
 .card.show {
