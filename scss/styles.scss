@@ -64,6 +64,7 @@ a {
 
 html {
   overflow-x: hidden !important;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -219,20 +220,12 @@ body {
   padding: 16px !important;
 }
 
-.panel-links li {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 31px;
-  letter-spacing: 0em;
-  text-align: center;
-}
-
 #contact-us {
   padding: 20px !important;
 }
 
 // PANELS
-#panel1-section {
+#cards-section {
   padding-top: 0 !important;
 }
 
@@ -256,24 +249,9 @@ body {
   // overflow: hidden;
 }
 
-// TODO ADD LARGER CLIP-PATHS AT OTHER BREAKPOINTS
 .card-step-1 {
   transform: translateY(-2rem);
-  // &::before {
-  //   content: '';
-  //   opacity: 0;
-  //   position: absolute;
-  //   width: 470px; /* Outer diameter of the circle */
-  //   height: 470px; /* Outer diameter of the circle */
-  //   bottom: -40%; /* Adjust this value to control the visible segment */
-  //   right: -30%; /* Adjust this value to control the visible segment */
-  //   border: 10px solid #ce210f; /* Adjust border width and color as needed */
-  //   border-radius: 50%; /* Creates the circle shape */
-  //   background: none; /* Ensures the center of the circle is transparent */
-  //   transform: rotate(-90deg); /* Adjust the angle if needed */
-  //   z-index: 0; /* Ensures it sits below the cards */
-  //   clip-path: ellipse(50% 50% at 100% 0%);
-  // }
+
   &::after {
     content: '';
     opacity: 0;
@@ -281,7 +259,7 @@ body {
     width: 470px; /* Outer diameter of the circle */
     height: 470px; /* Outer diameter of the circle */
     bottom: -40%; /* Adjust this value to control the visible segment */
-    right: -35%; /* Adjust this value to control the visible segment */
+    right: -33%; /* Adjust this value to control the visible segment */
     border: 10px solid #ce220f; /* Adjust border width and color as needed */
     border-radius: 50%; /* Creates the circle shape */
     background: none; /* Ensures the center of the circle is transparent */
@@ -293,21 +271,7 @@ body {
 
 .card-step-2 {
   transform: translateY(10rem);
-  // &::before {
-  //   content: '';
-  //   opacity: 0;
-  //   position: absolute;
-  //   width: 470px; /* Outer diameter of the circle */
-  //   height: 470px; /* Outer diameter of the circle */
-  //   bottom: -40%; /* Adjust this value to control the visible segment */
-  //   right: -30%; /* Adjust this value to control the visible segment */
-  //   border: 10px solid #ce210f; /* Adjust border width and color as needed */
-  //   border-radius: 50%; /* Creates the circle shape */
-  //   background: none; /* Ensures the center of the circle is transparent */
-  //   transform: rotate(-90deg); /* Adjust the angle if needed */
-  //   z-index: 0; /* Ensures it sits below the cards */
-  //   clip-path: ellipse(50% 50% at 0% 100%);
-  // }
+
   &::after {
     content: '';
     opacity: 0;
@@ -325,14 +289,13 @@ body {
   }
 }
 
-// TODO REMOVE ::AFTER ANIMATIONS ON 767px AND BELOW
+.card-step-3 {
+  transform: translateY(22rem);
+}
+
 .card-step-1.no-after::after,
 .card-step-2.no-after::after {
   display: none; /* This effectively "removes" the pseudo-element */
-}
-
-.card-step-3 {
-  transform: translateY(22rem);
 }
 
 .adjusted-container {
@@ -354,6 +317,44 @@ body {
 
   p {
     font-size: 12px !important;
+  }
+}
+// TRUSTEE PANEL
+
+.background-img {
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover;
+}
+
+// FOOTER
+footer {
+  h3 {
+    font-size: 16px !important;
+  }
+
+  p {
+    font-size: 16px !important;
+  }
+
+  a {
+    text-decoration: underline !important;
+  }
+}
+
+#copyright {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 50%
+    ),
+    linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+  z-index: 6;
+  h3 {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+    letter-spacing: 0em;
   }
 }
 
@@ -414,7 +415,7 @@ body {
 
 @keyframes rotateCounterClockwise90 {
   0% {
-    clip-path: ellipse(50% 20% at 0% 100%);
+    clip-path: ellipse(50% 15% at 0% 100%);
     opacity: 0;
     transform: rotate(90deg);
   }
@@ -493,8 +494,7 @@ body {
 
   // CARDS
 
-  .card-step-1,
-  .card-step-2 {
+  .card-step-1 {
     margin-top: 50px !important;
   }
 
