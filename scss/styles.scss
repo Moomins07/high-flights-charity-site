@@ -465,6 +465,12 @@ footer {
 
 // MEDIA QUERIES
 
+@media (min-width: 990px) {
+  #menu-btn {
+    display: none !important;
+  }
+}
+
 @media (max-width: 767px) {
   // HEADER STUFF
   .header .header-main {
@@ -493,8 +499,7 @@ footer {
   }
 
   // CARDS
-
-  .card-step-1 {
+  .card-step-1 .card-step-2 {
     margin-top: 50px !important;
   }
 
@@ -517,8 +522,12 @@ footer {
   }
 }
 
-@media (min-width: 990px) {
-  #menu-btn {
-    display: none !important;
+@media (max-width: 576px) {
+  #cards-section {
+    margin-bottom: 5rem !important;
+  }
+
+  .card-step-2 {
+    margin-top: 24px !important;
   }
 }

@@ -390,6 +390,11 @@ footer a {
     transform: scale(0.3) translate(-200%, -100%); /* Adjust for more movement */
   }
 }
+@media (min-width: 990px) {
+  #menu-btn {
+    display: none !important;
+  }
+}
 @media (max-width: 767px) {
   .header .header-main span:last-child {
     font-size: 20px !important;
@@ -407,7 +412,7 @@ footer a {
     line-height: 33px !important;
     letter-spacing: 0em;
   }
-  .card-step-1 {
+  .card-step-1 .card-step-2 {
     margin-top: 50px !important;
   }
   .adjusted-container {
@@ -427,8 +432,11 @@ footer a {
     width: auto !important;
   }
 }
-@media (min-width: 990px) {
-  #menu-btn {
-    display: none !important;
+@media (max-width: 576px) {
+  #cards-section {
+    margin-bottom: 5rem !important;
+  }
+  .card-step-2 {
+    margin-top: 24px !important;
   }
 }
