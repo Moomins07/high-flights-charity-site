@@ -171,6 +171,20 @@ body {
   }
 }
 
+.banner-section {
+  padding: 10rem 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+  padding: 1.25rem 2rem;
+  height: auto;
+  font-size: 2px;
+  letter-spacing: 0.15rem;
+  border: 0;
+}
+
 // Header Overlay
 .header .header-main {
   max-width: 1041px !important;
@@ -360,7 +374,7 @@ footer {
 
 // ANIMATIONS
 
-.card {
+.homepg-card {
   opacity: 0;
   transition: opacity 1s ease-out;
 }
@@ -369,7 +383,7 @@ footer {
   display: none;
 }
 
-.card.show {
+.homepg-card.show {
   opacity: 1;
 }
 
@@ -517,7 +531,7 @@ footer {
     }
   }
 
-  .card {
+  .homepg-card {
     width: auto !important;
   }
 }
