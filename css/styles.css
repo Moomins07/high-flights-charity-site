@@ -271,6 +271,39 @@ body {
   margin-bottom: 20rem !important;
 }
 
+.charity-card {
+  border-radius: 5px !important;
+  border: 1px solid #2e5c99 !important;
+  background: #fff !important;
+  box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.25) !important;
+  min-height: 255px !important;
+}
+.charity-card .card-link {
+  display: flex;
+  padding: 12px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  border: 2px solid #a6c3e0;
+  background: var(--Corporate-Blue, #2e5c99);
+  max-width: fit-content;
+}
+.charity-card .card-body {
+  z-index: 1;
+}
+.charity-card .line-decoration {
+  top: 25%;
+  z-index: 0;
+  position: absolute;
+  width: 200%;
+  margin-left: -50%;
+  height: 50px;
+  transform: rotate(21.773deg);
+  stroke-width: 50px;
+  background-color: rgba(166, 195, 224, 0.25);
+}
+
 .card {
   border: 0 !important;
 }
@@ -283,13 +316,17 @@ body {
   font-size: 16px !important;
 }
 .card p {
-  font-size: 12px !important;
+  font-size: 16px !important;
 }
 
 .background-img {
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover;
+}
+
+.img-wrapper {
+  max-height: 250px !important;
 }
 
 footer h3 {
@@ -407,6 +444,9 @@ footer a {
 @media (min-width: 990px) {
   #menu-btn {
     display: none !important;
+  }
+  #about-us-section .text-container {
+    text-align: left !important;
   }
 }
 @media (max-width: 767px) {
