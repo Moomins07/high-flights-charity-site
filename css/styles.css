@@ -337,6 +337,21 @@ body {
   border: 3px solid #a6c3e0 !important;
 }
 
+.event-card .event-card-body {
+  background: #fff;
+  padding: 20px 20px 20px 20px;
+  max-width: 85%;
+  margin: -50px auto 0 auto;
+  position: relative;
+}
+.event-card .event-card-img {
+  height: auto;
+  max-width: 100%;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 footer h3 {
   font-size: 16px !important;
 }
