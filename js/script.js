@@ -86,7 +86,7 @@
     checkForWindowChange();
     handleNavBarLinks();
     handleLandingPageAnimations();
-    handleScrollAnimations('show', '.card');
+    handleScrollAnimations('show', '.homepg-card');
     /* Honestly I'm not sure I even know what's going on here anymore but it works. Using IntersectionObserverAPI and a callback function in my handleScrollAnimations function to check for the last-card being observed, to use the callback to then call handleScrollAnimations to apply the animations .5s after eachother using setTimeout...? */
     handleScrollAnimations((target, observer) => {
       if (target.classList.contains('last-card')) {
@@ -106,14 +106,19 @@
   function checkForWindowChange() {
     const cardOne = document.querySelector('.card-step-1');
     const cardTwo = document.querySelector('.card-step-2');
-    if (window.innerWidth > 1350) {
-      cardOne.classList.remove('no-after');
-      cardTwo.classList.remove('no-after');
-    } else {
-      cardOne.classList.add('no-after');
-      cardTwo.classList.add('no-after');
+
+    // Only apply class changes if the elements exist
+    if (cardOne && cardTwo) {
+      if (window.innerWidth > 1350) {
+        cardOne.classList.remove('no-after');
+        cardTwo.classList.remove('no-after');
+      } else {
+        cardOne.classList.add('no-after');
+        cardTwo.classList.add('no-after');
+      }
     }
   }
+
   // ADD EVENT LISTENERS HERE!
   document.getElementById('menu-btn').addEventListener('click', navToggle);
   window.addEventListener('resize', checkForWindowChange);
